@@ -1,0 +1,168 @@
+
+Elena Marin
+08:26 (há 3 horas)
+para mariaelenalena37
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+%%%%%%cumentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+\usepackage{float}
+
+%\usepackage[brazil]{babel}  
+\usepackage[utf8]{inputenc} 
+
+    
+\sloppy
+
+\title{Identificação de Regiões Afastadas de Hubs Aéreos para Planejamento de Novas Cidades Inteligentes}
+
+\authora{Maria Elena\inst{1},Nádia Puchalski Kozievitch\inst{2}}
+
+
+\address{Instituto de Informática – Universidade Tecnológica Federal do Paraná (UFTPR)\\Av. Sete de setembro, 3165\\Curitiba – PR – Brazil
+\nextinstitute
+  Programa de Pós Graduação em Computação Aplicada\\Universidade Tecnológica do Paraná (UTFPR) \\Curitiba – PR – Brazil
+  \email{felipementel@hotmail.com, nadiap@utfpr.edu.br}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  The disorderly growth of large Brazilian cities has generated serious urban challenges, such as recurring floods, overloaded infrastructure, heavy traffic, and airports operating above capacity. In this context, this study proposes the identification of regions geographically distant from existing airports as a strategy for planning new smart cities. The proposal aims to use open georeferenced data to locate areas with potential for sustainable urban development, allowing the design of modern cities from their foundation — with wide streets, underground power grids, bus corridors, preventive hydrological planning, and efficient regional airports. These new cities, in addition to avoiding past mistakes, can reduce shipping costs and become strategic points for air refueling and logistics. The methodology uses proximity algorithms, connectivity analysis, spatial modeling, and geographic visualization to support the selection of ideal areas, connecting data science with long-term urban planning.
+\end{abstract}
+    
+\begin{resumo}
+  O crescimento desordenado das grandes cidades brasileiras tem gerado desafios urbanísticos graves, como enchentes recorrentes, sobrecarga de infraestrutura, trânsito intenso e aeroportos operando acima da capacidade. Neste contexto, o presente estudo propõe a identificação de regiões geograficamente distantes de aeroportos já existentes como estratégia para planejamento de novas cidades inteligentes. A proposta visa o uso de dados abertos georreferenciados para localizar áreas com potencial de desenvolvimento urbano sustentável, permitindo a concepção de cidades modernas desde sua fundação — com ruas largas, rede elétrica subterrânea, corredores de ônibus, planejamento hidrológico preventivo e aeroportos regionais eficientes. Estas novas cidades, além de evitar os erros do passado, podem reduzir custos de embarque e se tornar pontos estratégicos para reabastecimento aéreo e logística. A metodologia emprega algoritmos de proximidade, análise de conectividade, modelagem espacial e visualização geográfica para fundamentar a seleção das áreas ideais, conectando ciência de dados com planejamento urbano de longo prazo.
+\end{resumo}
+
+\section{Introdução}
+
+A urbanização acelerada nas últimas décadas tem levado à formação de grandes centros urbanos caracterizados por superlotação, infraestrutura deficiente e baixa qualidade de vida. Problemas como mobilidade urbana ineficiente, alagamentos frequentes e aeroportos sobrecarregados são sintomas recorrentes de um modelo de crescimento desordenado e reativo. Em paralelo, o avanço de tecnologias de análise de dados geoespaciais e o acesso crescente a dados abertos criam oportunidades inéditas para repensar o planejamento urbano de forma preventiva, estratégica e orientada por dados.
+
+Neste cenário, este trabalho propõe uma abordagem para identificar regiões geográficas com baixa cobertura aeroportuária como ponto de partida para o planejamento de novas cidades inteligentes. A premissa central é que, ao localizar áreas distantes de grandes aeroportos, é possível estimular o desenvolvimento de polos urbanos modernos, planejados desde sua concepção, com infraestrutura adequada, ruas largas, redes elétricas subterrâneas, parques, áreas escolares, áreas industriais, áreas comercias, corredores de transporte coletivo e aeroportos regionais otimizados.
+
+A análise considera múltiplos aspectos computacionais e geográficos. Os resultados esperados incluem não apenas a identificação de áreas prioritárias para desenvolvimento, mas também uma ferramenta conceitual para auxiliar formuladores de políticas públicas, urbanistas e planejadores logísticos.
+O restante deste artigo está organizado da seguinte forma: a Seção 2 apresenta os fundamentos teóricos e trabalhos relacionados; a Seção 3 descreve os dados utilizados e a metodologia de análise; a Seção 4 discute os resultados obtidos; e a Seção 5 apresenta as conclusões e propostas de trabalhos futuros.
+
+\section{Fundamentos Teóricos e Trabalhos Relacionados} \label{sec:firstpage}
+
+A análise de acessibilidade aeroportuária e o planejamento territorial fundamentado em dados geoespaciais envolvem diversas áreas da computação, com destaque para estruturas espaciais, teoria de grafos, visualização de dados e inteligência artificial. O cruzamento dessas técnicas permite não apenas identificar regiões com baixa cobertura aérea, mas também propor soluções de impacto urbano, logístico e social.
+
+\subsection{Estruturas e algoritmos espaciais}
+A identificação de regiões afastadas de aeroportos requer a aplicação de algoritmos de proximidade sobre um conjunto de pontos georreferenciados. Estruturas como KD-Trees e R-Trees [Bentley, 1975; Guttman, 1984] são amplamente utilizadas para acelerar buscas por vizinhança em grandes volumes de dados espaciais, sendo essenciais para a determinação eficiente dos aeroportos mais próximos de uma dada coordenada.
+
+Além disso, técnicas de geometria computacional e álgebra linear são empregadas para o cálculo de distâncias em superfícies esféricas (como a Terra), complementando as estruturas de indexação espacial.
+
+\subsection{Análise de conectividade e redes aéreas}
+Do ponto de vista da teoria de grafos, a malha de conexões entre aeroportos pode ser modelada como um grafo ponderado, em que os vértices representam aeroportos e as arestas indicam rotas diretas. Algoritmos clássicos como Dijkstra e A* [Dijkstra, 1959; Hart et al., 1968] são frequentemente utilizados para avaliar caminhos mínimos, tempos de deslocamento ou custos operacionais.
+
+Trabalhos como [Guimerà et al., 2005] exploram redes complexas em escala global para estudar a conectividade e vulnerabilidade do transporte aéreo, enquanto outros autores analisam padrões de hub-and-spoke e estratégias de descentralização logística.
+
+\subsection{Visualização e sistemas de informação geográfica}
+A representação gráfica de aeroportos e sua distribuição espacial pode ser realizada por meio de sistemas de informações geográficas (SIG/GIS), que possibilitam a sobreposição de dados geográficos com camadas temáticas. Ferramentas como QGIS e bibliotecas como Leaflet, GeoPandas e Kepler.gl têm sido empregadas em projetos urbanos, ambientais e logísticos para apoiar o planejamento territorial.
+Tais ferramentas são particularmente úteis para a identificação de zonas pouco atendidas por infraestrutura aeroportuária e para a comunicação visual dos resultados obtidos.
+
+\subsection{Planejamento urbano orientado por dados}
+Recentemente, a literatura tem explorado o conceito de cidades inteligentes (smart cities) sob a ótica de dados abertos, sustentabilidade e inclusão social [Batty et al., 2012]. A proposta de criação de novos centros urbanos planejados a partir de dados georreferenciados — em especial, com foco em acessibilidade aérea — representa uma extensão natural desse paradigma.
+Embora existam iniciativas voltadas ao mapeamento de acessibilidade em contextos urbanos já existentes [Gonzalez et al., 2010], poucos trabalhos propõem a integração entre análise
+
+\section{Desenvolvimento}
+
+A etapa de desenvolvimento consistiu na obtenção, pré-processamento, estruturação e persistência dos dados referentes aos aeroportos públicos e privados, com o objetivo de possibilitar análises geoespaciais voltadas à identificação de regiões afastadas de grandes centros aeroportuários. O processo foi realizado com o apoio do Sistema Gerenciador de Banco de Dados PostgreSQL, utilizando fonte de dados disponiblizados pela ANAC cruzando com dados de densidade demográficas
+
+\subsection{Fonte de dados}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Dado} & \textbf{Link} \\
+        \hline
+        Densidade demográfica & \url{https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html} \\
+        \hline
+        Latitude e longitude das cidades & \url{https://joseotaviobiscaia.wixsite.com/geopdf/arquivo-das-cidades-em-excel} \\
+        \hline
+        Aeródromos públicos & \url{https://sistemas.anac.gov.br/dadosabertos/Aerodromos/Aer%C3%B3dromos%20P%C3%BAblicos/Lista%20de%20aer%C3%B3dromos%20p%C3%BAblicos} \\
+        \hline
+        Aeródromos privados & \url{https://sistemas.anac.gov.br/dadosabertos/Aerodromos/Aer%C3%B3dromos%20Privados/Lista%20de%20aer%C3%B3dromos%20privados/Aerodromos%20Privados} \\
+        \hline
+    \end{tabular}
+    \caption{Fontes dos dados utilizados para análise geoespacial}
+    \label{tab:fontes_dados}
+\end{table}
+
+\subsection{Obtenção e compreensão dos dados}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{processoImportacao.png}
+\caption{obter, analisar e carregar dados}
+\label{fig:dataload}
+\end{figure}
+
+\section{Resultados e Conclusões}
+
+Este trabalho apresentou uma abordagem exploratória baseada em dados geoespaciais de aeroportos publicos e privados no estado do Paraná, com o objetivo de identificar regiões subatendidas por infraestrutura aeroportuária. A partir da modelagem dos dados em um banco relacional PostgreSQL, foi possível organizar e preparar as informações para consultas otimizadas com foco em análises de localização e acessibilidade.
+
+A criação da base envolveu a limpeza, estruturação e indexação de um conjunto de dados com mais de 100 registros sobre aeroportos e de 591 municipios do estado do Paraná com sua respectiva densidade populacional, permitindo a aplicação futura de algoritmos de proximidade, análises de cobertura e simulações de conectividade. Esses dados são fundamentais para a formulação de políticas públicas e iniciativas de planejamento urbano que visem a criação de cidades inteligentes — estrategicamente localizadas em regiões geográficas atualmente desprovidas de acesso aéreo eficiente.
+
+A proposta se insere no contexto de reconfiguração urbana sustentável: ao planejar novos centros urbanos em regiões com baixa densidade e alta viabilidade geográfica, é possível evitar problemas típicos de grandes metrópoles, como enchentes, superlotação, e mobilidade ineficiente. Além disso, ao incluir a perspectiva aeroportuária como elemento estruturante, criam-se oportunidades para descentralizar o tráfego aéreo, reduzir custos operacionais e fomentar polos de desenvolvimento regional.
+
+Como continuidade deste trabalho, propõe-se a utilização de técnicas de análise espacial avançada, como KD-Trees e algoritmos de clustering geográfico, para identificar, de forma automatizada, regiões ideais para a instalação de novos aeroportos. Ademais, planeja-se integrar dados demográficos, socioeconômicos e ambientais para uma avaliação multidimensional da viabilidade de novas cidades inteligentes no território nacional.
+
+\section{Imagens}\label{sec:figs}
+
+(Figure~\ref{fig:mapaPR}) apresenta a distribuição espacial dos aeroportos públicos e privados no estado do Paraná, classificados de acordo com o tipo de pavimentação da pista e a população do município em que estão inseridos. Os pontos são diferenciados por cores e formatos, representando tanto o tipo de gestão (pública ou privada) quanto a natureza do solo da pista (asfalto, grama, cascalho, piçarra ou terra).
+
+Além disso, a figura incorpora uma camada de informação demográfica, indicando os municípios com população entre 50 mil e 100 mil habitantes, entre 100 mil e 200 mil, e acima de 200 mil, com círculos verdes em diferentes tonalidades. Essa combinação permite observar correlações entre a infraestrutura aeroportuária e o porte populacional dos municípios. Nota-se, por exemplo, uma maior concentração de aeroportos asfaltados em cidades com maior densidade populacional, especialmente no sudeste do estado. Por outro lado, aeroportos com pistas de grama, piçarra e terra estão predominantemente localizados em municípios com menor população, refletindo a precariedade da infraestrutura aérea em regiões menos desenvolvidas.
+
+Essa análise espacial fundamenta a proposta deste estudo ao evidenciar vazios de cobertura aeroportuária em áreas estratégicas, que poderiam ser consideradas para o desenvolvimento de novas cidades inteligentes, com infraestrutura planejada e integração logística eficiente.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{img.png}
+\caption{Legendas e mapa do estado do Paraná}
+\label{fig:mapaPR}
+\end{figure}
+
+\bibliographystyle{sbc}
+\begin{thebibliography}{99}
+
+\bibitem{egenhofer:92}
+Egenhofer, M. J., \& Frank, A. U. (1992). Object-oriented modeling for GIS. \textit{URISA Journal}, \textbf{4}(2), 3--19.
+
+\bibitem{kennedy:11}
+Kennedy, C., et al. (2011). The study of urban metabolism and its applications to urban planning and design. \textit{Environmental Pollution}, \textbf{159}(8--9), 1965--1973.
+
+\bibitem{batty:13}
+Batty, M. (2013). \textit{The New Science of Cities}. MIT Press.
+
+\bibitem{gutierrez:10}
+Gutiérrez, J., Condeço-Melhorado, A., \& Martín, J. C. (2010). Using accessibility indicators and GIS to assess spatial spillovers of transport infrastructure investment. \textit{Journal of Transport Geography}, \textbf{18}(1), 141--152.
+
+\bibitem{shekhar:03}
+Shekhar, S., \& Chawla, S. (2003). \textit{Spatial Databases: A Tour}. Prentice Hall.
+
+\bibitem{moura:17}
+Moura, F., \& Cambra, P. (2017). Measuring walkability for distinct pedestrian groups with a participatory assessment method: A case study in Lisbon. \textit{Landscape and Urban Planning}, \textbf{157}, 282--296.
+
+\end{thebibliography}
+
+
+\end{document} 
